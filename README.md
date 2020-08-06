@@ -1,6 +1,5 @@
-[![Jeff's github stats](https://github-readme-stats.vercel.app/api?username=nondevops)](https://github.com/anuraghazra/github-readme-stats)
 
-[![Jeff's github stats](https://github-readme-stats.vercel.app/api?username=nondevops&show_icons=true&theme=dark)](https://github.com/anuraghazra/github-readme-stats)
+[![Jeff's github stats](https://github-readme-stats.vercel.app/api?username=nondevops&show_icons=true&theme=dark&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 
 
 # n9e-collector-plugins 常用插件监控脚本集合(持续更新中)
