@@ -1,3 +1,6 @@
+[![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=nondevops)](https://github.com/anuraghazra/github-readme-stats)
+
+
 # n9e-collector-plugins 常用插件监控脚本集合(持续更新中)
 夜莺监控采集脚本插件集合,源open-falcon插件请访问https://github.com/nondevops/open-falcon-plugins
 
