@@ -1,6 +1,5 @@
-
 [![Jeff's github stats](https://github-readme-stats.vercel.app/api?username=nondevops&show_icons=true&theme=dark&layout=compact)](https://github.com/nondevops/n9e-collector-plugins)
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=nondevops&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=nondevops&layout=compact)](https://github.com/nondevops/n9e-collector-plugins)
 
 
 # n9e-collector-plugins 常用插件监控脚本集合(持续更新中)
