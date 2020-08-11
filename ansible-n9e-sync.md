@@ -11,7 +11,21 @@
 
 从表格可以得知，n9e的监控主机对象存在跨网跨云现象，所以collector的服务必须走公网调用。
 
+# 主机host
+```
+[aliyun]
+1.2.1.1 ansible_ssh_port=22
 
+[didiyun]
+1.3.1.1 ansible_ssh_port=22
+
+[ucloud]
+1.4.1.1 ansible_ssh_port=22
+
+```
+
+# 前提条件
+服务端与被采集端要做好免密登录，具体怎么做免密，请baidu
 
 # 背景
 由于事先未约定俗成统一插件目录以及服务启动路径等问题，为解决一系列问题特编写了一些简单的ansible命令以备不时之需
