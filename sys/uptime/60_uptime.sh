@@ -1,5 +1,4 @@
 #!/bin/bash
-# author: ulric.qin@gmail.com
 
 duration=$(cat /proc/uptime | awk '{print $1}')
 #localip=$(/usr/sbin/ifconfig `/usr/sbin/route|grep '^default'|awk '{print $NF}'`|grep inet|awk '{print $2}'|head -n 1)

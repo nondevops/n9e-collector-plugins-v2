@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# TCP: 360 (estab 272, closed 71, orphaned 0, synrecv 0, timewait 71/0), ports 0
 output=$(ss -s | grep TCP:)
 
 ss_estab=$(echo $output | grep -Po "estab (\d+)" | awk '{print $2}')
