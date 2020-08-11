@@ -2,7 +2,7 @@
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=nondevops&layout=compact)](https://github.com/nondevops/n9e-collector-plugins)
 
 
-# n9e-collector-plugins 常用插件监控脚本集合(持续更新中)
+# n9e-collector-plugins 常用插件监控脚本集合(持续更新中且不收取任何咨询答疑费用)
 夜莺监控采集脚本插件集合,源open-falcon插件请访问https://github.com/nondevops/open-falcon-plugins
 
 ## 该仓库的产生背景
@@ -14,33 +14,40 @@ open-falcon监控难运维，n9e易运维，但些许插件可能不兼容，为
 ## 监控说明
 
 ``` text
-如果系统环境不是ip作为唯一对象，请修改相应插件的获取方式；
-该仓库的插件与gitlab统一自动更新到客户机；
+1.如果系统环境不是`hostname-ip`格式作为唯一endpoint对象，请修改相应插件的获取方式；
+
+为什么要使用`hostname-ip`格式作为唯一endpoint对象? 原因为ip无法第一时间识别是什么业务的实例，加上历史遗留原因ip可能会被复用或者存在ip段管理混乱现象，ip作为唯一标识无法满足运维需求，故增加hostname-ip为唯一对象。
+
+为什么不使用`hostname`作为唯一endpoint对象?原因为历史遗留问题，没有结合业务标准化孵化实例，导致虚拟机为默认的localhost,不具有识别性；
+
+2.该仓库的插件与gitlab统一自动更新到客户机；
+
+3.获取`hostname-ip`格式的命令可能写的比较简陋，没有多方面测试，不符合业务需求的请自行修改或提交PR；
 ```
 
 ## 插件介绍
 
 ``` bash
-cachecloud # cachecloud 监控,soho开源的redis管理平台
-ceph # ceph 监控
-cert # 证书过期 监控
-domain # 域名过期 监控
-es # es 监控
-hadoop # hadoop 监控
-haproxy # haproxy 监控
-hardware # hardware 监控
-lvs # lvs 监控
-memcached # memcached 监控
-mongodb # mongodb 监控
-nginx # nginx 监控
-powerdns # powerdns 监控
-public-cloud # 公有云 监控,如ELB数据
-rabbitmq # rabbitmq 监控
-redis # redis 监控
-solr # solr 监控
-squid # squid 监控
-sys # 系统级 监控
-zookeeper # zookeeper 监控
+├── cert
+│   └── 600_cert_expire_time.sh
+├── self-plugins
+│   └── 60_plugin_status.py
+└── sys
+    ├── connections
+    │   └── tcp
+    │       └── 10_ss.sh
+    ├── ntp
+    │   ├── 600_ntp_monitor.py
+    │   └── bak-600_ntp_monitor.py
+    ├── ping
+    │   ├── 60_ping_loss.sh
+    │   ├── 60_pings.sh
+    │   └── ping_172.26.45.178.tmp
+    ├── uptime
+    │   └── 60_uptime.sh
+    └── user-login
+        └── 10_user_logged.py
+
 .....(脚本太多了直接clone下来慢慢看吧)
 
 
@@ -77,7 +84,8 @@ git clone https://github.com/nondevops/n9e-collector-plugins.git
 ```
 ## 意见和交流
 ```
-如对脚本或插件有疑问或有错误,欢迎提PR,大家共同维护
+如对脚本或插件有疑问或有错误,欢迎提PR或者ISSUE,大家共同维护..
+如1天之内未回复，请在我的主页或者博客某篇文章的微信二维码扫描添加我为好友进行问题沟通；
 ```
 
 ## 注意
