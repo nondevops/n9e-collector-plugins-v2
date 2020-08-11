@@ -17,13 +17,21 @@
 由于事先未约定俗成统一插件目录以及服务启动路径等问题，为解决一系列问题特编写了一些简单的ansible命令以备不时之需
 
 # 从n9e服务端同步推送plugin目录到被采集端
+``` shell
 ansible -i /etc/ansible/hosts all -m synchronize -a 'delete=yes archive=yes src=/opt/gocode/src/github.com/didi/nightingale/plugin/ dest=/opt/gocode/src/github.com/didi/nightingale/plugin/'
+```
 
 # 从n9e服务端同步推送n9e-collector服务到被采集端并重启服务
+``` shell
+同步n9e-collector服务文件到被采集端初始化目录
 ansible -i /etc/ansible/hosts all -m synchronize -a 'src=/opt/gocode/src/github.com/didi/nightingale/etc/service/n9e-collector.service dest=/opt/gocode/src/github.com/didi/nightingale/etc/service/n9e-collector.service'
 
+同步n9e-collector服务文件到被采集端服务启动目录
 ansible -i /etc/ansible/hosts all -m synchronize -a 'src=/opt/gocode/src/github.com/didi/nightingale/etc/service/n9e-collector.service dest=/usr/lib/systemd/system/n9e-collector.service'
 
+由于更新了服务文件需批量重载服务
 ansible -i /etc/ansible/hosts all -m systemd -a "name=n9e-collector daemon_reload=yes"
 
+批量重启n9e-collector服务
 ansible -i /etc/ansible/hosts all -m service -a 'name=n9e-collector state=restarted enabled=yes'
+```
