@@ -1,6 +1,4 @@
 [![Jeff's github stats](https://github-readme-stats.vercel.app/api?username=nondevops&show_icons=true&theme=dark&layout=compact)](https://github.com/nondevops/n9e-collector-plugins)
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=nondevops&layout=compact)](https://github.com/nondevops/n9e-collector-plugins)
-
 
 # n9e-collector-plugins 常用插件监控脚本集合(持续更新中且不收取任何咨询答疑费用)
 夜莺监控采集脚本插件集合,源open-falcon插件请访问https://github.com/nondevops/open-falcon-plugins
