@@ -37,8 +37,7 @@ open-falcon监控难运维，n9e易运维，但些许插件可能不兼容，为
     │   └── bak-600_ntp_monitor.py
     ├── ping
     │   ├── 60_ping_loss.sh
-    │   ├── 60_pings.sh
-    │   └── ping_172.26.45.178.tmp
+    │   ├── 60_ping.sh
     ├── uptime
     │   └── 60_uptime.sh
     └── user-login
@@ -96,3 +95,6 @@ git clone https://github.com/nondevops/n9e-collector-plugins.git
 获得更多的技术体验
 https://www.cqops.club
 ```
+
+## git提交
+git pull && git add . && git commit -am "update" && git push -u origin master
