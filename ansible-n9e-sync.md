@@ -32,7 +32,7 @@
 
 # 从n9e服务端同步推送plugin目录到被采集端
 ``` shell
-ansible -i /etc/ansible/hosts all -m synchronize -a 'delete=yes archive=yes src=/opt/gocode/src/github.com/didi/nightingale/plugin/ dest=/opt/gocode/src/github.com/didi/nightingale/plugin/'
+ansible -i /etc/ansible/hosts all -m synchronize -a 'delete=yes archive=yes rsync_opts=--exclude=.tmp rsync_opts=--exclude=.pyc src=/opt/gocode/src/github.com/didi/nightingale/plugin/ dest=/opt/gocode/src/github.com/didi/nightingale/plugin/'
 ```
 
 # 从n9e服务端同步推送n9e-collector服务到被采集端并重启服务

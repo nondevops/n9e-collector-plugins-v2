@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-#V1.0 Description：用户登录数监控
-
 import os
 import time
 import json
@@ -13,10 +11,11 @@ import logging
 import socket
 
 data = []
-
 step = int(os.path.basename(sys.argv[0]).split("_", 1)[0])
 plugins_log_dirs = '/opt/gocode/src/github.com/didi/nightingale/logs/plugin/'
 plugins_erro_log = plugins_log_dirs+'/error.log'
+counterType = 'GAUGE'
+ts = int(time.time())
 
 if not os.path.exists(plugins_log_dirs):
     os.makedirs(plugins_log_dirs)
@@ -51,20 +50,23 @@ def get_ip_address(key):
         return endpoint
 
 try:
-    value = int(commands.getoutput("/usr/bin/last | grep 'logged' | grep -v 'grep' | wc -l").strip())
+    value = int(commands.getoutput("ps -aux | awk '{print $8}' | grep -v 'grep' | grep '^Z$' |wc -l").strip())
 except Exception,err:
     logging.error("Run command failed:%s" %str(err))
     sys.exit(2)
+
 def create_record():
     record = {}
-    record['metric'] = 'sys.users.logged'
+    record['metric'] = 'sys.process.zombie'
     record['endpoint'] = get_ip_address('endpoint')
-    record['timestamp'] = int(time.time())
+    record['timestamp'] = ts
     record['step'] = step
     record['value'] = value
-    record['counterType'] = 'GAUGE'
+    record['counterType'] = counterType
     record['tags'] = ''
     data.append(record)
+
 create_record()
+
 if data:
    print json.dumps(data)

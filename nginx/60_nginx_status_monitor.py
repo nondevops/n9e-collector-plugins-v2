@@ -14,6 +14,7 @@ import socket
 import yaml
 
 counter_list = []
+
 step = int(os.path.basename(sys.argv[0]).split("_", 1)[0])
 plugins_log_dirs = '/opt/gocode/src/github.com/didi/nightingale/logs/plugin/'
 plugins_erro_log = plugins_log_dirs+'/error.log'
